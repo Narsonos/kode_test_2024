@@ -7,7 +7,7 @@ Kode test task 2024 for backend Python developer.
 - SQLAlchemy
 - PostgreSQL
 - Docker
-- Postman
+- Postman (https://www.postman.com/narsonos/kode-notes-task-api)
 
 ## Installation
 1) Clone repository.
