@@ -1,0 +1,24 @@
+services:
+  flask-app:
+    build:
+      context: ./services/app
+      dockerfile: Dockerfile.prod
+    command: uwsgi --http 0.0.0.0:5200 --wsgi-file /home/app/app/wsgi.py --callable app
+    ports:
+      - 5200:5200
+    env_file:
+      - ./.env.app
+    depends_on:
+      - db
+    volumes:
+      - ./services/app:/home/app
+
+  db:
+    image: postgres:15
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env.app
+
+volumes:
+  pg_data:
