@@ -50,7 +50,7 @@ def authenticate() -> dict:
 
     # Notice that we are passing in the actual sqlalchemy user object here
     access_token: str = create_access_token(identity=user)
-    return jsonify(access_token=access_token)
+    return jsonify(access_token=access_token, logged_in_as=user.id)
 
 #Notes routes section
 #Get all notes
