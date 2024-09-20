@@ -21,6 +21,7 @@ docker exec notes_api-flask-app-1 python cli.py recreate_db
 docker exec notes_api-flask-app-1 python cli.py add_test_data
 ```
 This will drop all tables in the database, recreate them and add users "test" and "test2". Passwords are the same as usernames.
+
 After that you may access the API at 0.0.0.0:5200/api/hello
 
 ## Routes
