@@ -17,8 +17,15 @@ def recreate_db() -> None:
 def add_test_data() -> None:
 	user = User(username='test')
 	user.set_password('test')
+
+	user2 = User(username='test2')
+	user2.set_password('test2')
+
 	db.session.add(user)
+	db.session.add(user2)
 	db.session.commit()
+	print('[FLASK-CLI: add_test_data] CURRENT USERS_TABLE STATE:\n',User.query.all())
+
 
 if __name__ == "__main__":
 	cli()
